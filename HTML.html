@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
 </head>
-<body class="" style="width: 100% !important;height: 130vh !important;background-image:url(worldcup/LOGO/back.jpeg);background-size: cover;background-position: center; background-repeat: no-repeat;">
+<body class="" style="width: 100% !important;height: 100vh !important;background-image:url(worldcup/LOGO/back.jpeg);background-size: cover;background-position: center; background-repeat: no-repeat;">
     <section>
         <div class="d-flex justify-content-between align-items-center " style="width: 80% !important;">
             <div  style="width: 20% !important;">
@@ -26,31 +26,200 @@
     </section>
     <section class="w-100 py-4">
         <div class=" d-flex  flex-wrap gap-4  justify-content-center  ">
-            <?php
-while ($row = $result->fetch_assoc()) :
-    $equipes = explode(',', $row['equipes_du_groupe']);
-?>
             <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
                 <div class="group text-center bg-white rounded-2">
-                    <?php for ($i = 0; $i < count($equipes); $i++) :
-                    list($nomEquipe, $logo) = explode(' - ', $equipes[$i]);
-                ?>
-                       <h2>Groupe <?= $row['nom_groupe'] ?></h2>
+                       <h2>Groupe A</h2>
                 </div>
                 <div class="equipe d-flex flex-column pb-2">
                     <div class="d-flex align-items-center ">
-                        <img src="<?php echo $logo; ?>" alt="Logo" class="mr-2 " style="max-width: 40px; max-height: 40px;">
-                        <!-- <img src="" class="w-25"style="width: 40px !important;"> -->
-                        <p class="m-0 text-white fs-4"><?= $nomEquipe ?></p>
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
                     </div>
-                    <?php endfor; ?>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
                    
                 </div>
             </div>
-           
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="cards p-2 rounded-3" style="width: 20%; background-color:#001C30;">
+                <div class="group text-center bg-white rounded-2">
+                       <h2>Groupe A</h2>
+                </div>
+                <div class="equipe d-flex flex-column pb-2">
+                    <div class="d-flex align-items-center ">
+                        <img src="worldcup/icons8-allemagne-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">MOROCCO</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png"  class="w-25"style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="worldcup/icons8-algérie-circulaire-96.png" class="" style="width: 40px !important;">
+                        <p class="m-0 text-white fs-4">nom eqipe </p>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
-        
-<?php endwhile; ?>
+ 
     </section>
 
 

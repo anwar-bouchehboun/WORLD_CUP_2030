@@ -4,3 +4,4 @@ La Fédération Royale Marocaine de Football lance un appel d'offres à de jeune
 ​
 
 L'idée est de faire une plateforme facile à utiliser où les fans de football pourront voir les détails des équipes, les lieux (Stades), et les groupes. Il y aura au total 8 groupes, chacun composé de 4 équipes.
+

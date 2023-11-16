@@ -1,0 +1,16 @@
+@media  (max-width: 767px) {
+    .fifa{
+       width: 100% !important;
+       font-size: 20px;
+     
+    }
+  .image{
+    
+    width: 60% !important;
+  }
+    .cup{
+        width: 90% !important;
+        
+    }
+
+  }
