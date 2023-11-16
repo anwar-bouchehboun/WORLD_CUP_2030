@@ -1,10 +1,29 @@
 
-// $(document).ready(function(){
-//   $("#GA").click(function(){
-//     $("#").hide();
+
+
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+    const queryString =  window.location.search;
     
-//   });
-//   $("#show").click(function(){
-//     $("p").show();
-//   });
-// });
+    const groupe =  document.getElementById("groupe")
+    console.log(queryString.includes("ALL"))
+    console.log(queryString)
+
+    if(!queryString.includes("ALL")){
+
+        groupe.classList.add("hideGroup")
+        
+    }
+    if(queryString === ""){
+        groupe.classList.remove("hideGroup")
+
+    }
+    else{
+       
+        
+
+    }
+    
+    
+})
