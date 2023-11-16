@@ -153,7 +153,7 @@ if (isset($_GET['B'])) {
 ?>
 <!-- C -->
 <?php
-if (isset($_POST['C'])) {
+if (isset($_GET['C'])) {
     $idG = 3;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
@@ -192,7 +192,7 @@ if (isset($_POST['C'])) {
 ?>
 <!-- D -->
 <?php
-if (isset($_POST['D'])) {
+if (isset($_GET['D'])) {
     $idG = 4;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
@@ -231,7 +231,7 @@ if (isset($_POST['D'])) {
 ?>
 <!-- E -->
 <?php
-if (isset($_POST['E'])) {
+if (isset($_GET['E'])) {
     $idG = 5;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
@@ -270,7 +270,7 @@ if (isset($_POST['E'])) {
 ?>
 <!-- F -->
 <?php
-if (isset($_POST['F'])) {
+if (isset($_GET['F'])) {
     $idG = 6;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
@@ -309,7 +309,7 @@ if (isset($_POST['F'])) {
 ?>
 <!-- G -->
 <?php
-if (isset($_POST['G'])) {
+if (isset($_GET['G'])) {
     $idG = 7;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
@@ -348,7 +348,7 @@ if (isset($_POST['G'])) {
 ?>
 <!-- H -->
 <?php
-if (isset($_POST['H'])) {
+if (isset($_GET['H'])) {
     $idG = 8;
     $sql = "SELECT e.nom_equipe, e.logo,e.continent FROM equipe e WHERE e.id_groupe = $idG";
     $req = mysqli_query($conn, $sql);
