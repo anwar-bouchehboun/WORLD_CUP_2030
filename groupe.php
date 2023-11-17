@@ -28,7 +28,7 @@ include'./PHP_Sql/cnx.php'
                 <img  src="worldcup/LOGO/LOGO.png" alt="logo" class="w-50  ">
             </div>
             <div class="fifa text-start" style="width: 30%;">
-                <h1 class="  text-white fs-3 w-100 ">FIFA WORLD CUP <strong style="font-family:Agbalumo !important;">MOROCCO<span class="text-success">2030</span></strong></h1>
+                <h1 class="  fs-3 w-100 " style="color: red;">FIFA WORLD CUP <strong style="font-family:Agbalumo !important;">MOROCCO<span class="text-success">2030</span></strong></h1>
             </div>
         </div>
     </section>
@@ -76,12 +76,18 @@ include'./PHP_Sql/cnx.php'
 <!-- Affichage des cartes d'équipes -->
 <!--  -->
 
+  <!-- modal -->
 
-<section>
+  <section class=" container pb-2" id="groupe">
+  <div class=" row gap-5 justify-content-center w-100 mt-5 ">
                 <?php
-                include'PHP_Sql/affiche.php'
+                
+                include 'PHP_Sql/affiche.php';
+                
                 ?>
-</section>
+            
+</div>
+  </section>
 
 
 <!-- Inclusion du script Bootstrap JS et jQuery -->

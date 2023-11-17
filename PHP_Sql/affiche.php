@@ -1,37 +1,61 @@
 <?php
-    $result = $conn->query("SELECT g.nom AS nom_groupe, GROUP_CONCAT(CONCAT(e.nom_equipe, ' - ', e.logo)) AS equipes_du_groupe
-    FROM groupes g
-    JOIN equipe e ON g.id = e.id_groupe
-    GROUP BY g.nom");
-?>
-    <div id="groupe" class=" container mt-5 d-flex flex-wrap justify-content-center align-items-center gap-5">
- <!-- ARRY ASSOICTAIVE -->
-        <?php
-        while ($row = $result->fetch_assoc()) :
-            $equipes = explode(',', $row['equipes_du_groupe']);
-        ?>
+$cnc = mysqli_connect("localhost", "root", "", "worldcup");
+function test($cnc) {
 
-            <div>
-                <div  class="card mb-4 p-2" style="width: 15rem;">
-                    <div class="text-center fs-3 bg-white"><h3 style="color: #001C30;">GROUPE <?= $row['nom_groupe'] ?></h3></div>
-                    <div class="text-center w-100 rounded-2">
-                        <?php for ($i = 0; $i < count($equipes); $i++) :
-                        // trouve liste on recuper donner in Arry 
-                            list($nomEquipe, $logo) = explode(' - ', $equipes[$i]);
-                        ?>
-                            <div class="d-flex my-1 py-2 rounded-2 border" style="background-color:#001B79">
-                                <div class=" ms-1">
-                                    <img src="<?php echo $logo; ?>" alt="Logo" class="mt-1 ms-1" style="max-width: 40px; max-height: 40px;">
-                                </div>
-                                <div>
-                            <button class="text-white ms-1 fs-5 m-0 btn "type="button"><?= $nomEquipe ?></button> 
-                                </div>
-                            </div>
-                        <?php endfor; ?>
+    $GROUPS = "SELECT * FROM groupes;";
+    $GROUPSCNC = mysqli_query($cnc,$GROUPS);
+  
+  
+  
+    while ($row = mysqli_fetch_assoc($GROUPSCNC)) {
+      $groupId = $row["id"];
+    echo '<div class=" card mb-4 col-md-3 d-flex align-items-center p-2" style="width:18rem;">
+  
+    <h1 class="text-center bg-white w-100 fs-3" style = "color: #001C30;">GROUPE '.$row ["nom"].'</h1>
+  
+    <div class="d-flex justify-content-between flex-column w-100 gap-2 ">';
+    $TEAMS = "SELECT * FROM equipe WHERE id_groupe = $groupId;";
+    $TEAMSCNC = mysqli_query($cnc,$TEAMS);
+  
+    while ($roww = mysqli_fetch_assoc($TEAMSCNC)) {
+  
+      echo '
+      <div class="FIRST d-flex align-items-center fw-bold gap-2 rounded-2 border" style = "background-color:#001B79;" data-bs-toggle="modal" data-bs-target="#exampleModal_'.$roww ["id_equipe"].'">
+          <img src="'.$roww ["logo"].'" alt="LOGO" class="w-25">
+          <p class="text-white fs-4 m-0">'.$roww ["nom_equipe"].'</p>
+        </div>
+        
+        <div class="modal fade" id="exampleModal_'.$roww ["id_equipe"].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-2" id="exampleModalLabel">  <img src="'.$roww ["logo"].'" alt="logo" class="w-25">'.$roww ["nom_equipe"].'</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body  rounded mx-auto  my-2 "style="width:80%;style="background-color: #94A684;">
+                    <img src="'.$roww ["logo"].'" alt="logo" class="w-25">
+                    <h2 class="fs-3 ">CAPITALE: <strong> '.$roww['capitale'].' </strong></h2>
+                    <h2 class="fs-3 ">CONTIENT: <strong> '.$roww['continent'].' </strong></h2>
+                    <h2 class="fs-3">POPULATION: <strong> '. $roww['population'].' </strong></h2>
+                    <h2 class="fs-3">JOUEURS CLES: <strong> '.$roww['joueur'].'</strong></h2>
                     </div>
                 </div>
             </div>
-
-        <?php endwhile; 
-           $conn->close();?>
+        </div>
+        
+        
+        ';
+    }
+  
+    echo '
     </div>
+    </div>
+    ';
+  
+  }
+  };
+  
+
+test($cnc);
+
+?>

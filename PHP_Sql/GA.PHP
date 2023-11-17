@@ -22,7 +22,7 @@ if (isset($_GET['A'])) {
             <tr>
                 
                 <td><img src="<?php echo $row['logo']; ?>" alt="Logo" style="max-width: 40px; max-height: 40px;">
-<?php echo $row['nom_equipe']; ?></td>
+                 <?php echo $row['nom_equipe']; ?></td>
                 <td><?php echo $row['continent']; ?></td>
                 <td>0</td>
             </tr>

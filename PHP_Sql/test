@@ -1,0 +1,87 @@
+<?php
+$result = $conn->query("SELECT * FROM groupes");
+
+?>
+<div id="groupe" class="container mt-5 d-flex flex-wrap justify-content-center align-items-center gap-5">
+    <!-- ARRY ASSOICTAIVE -->
+    <?php
+    while ($row = $result->fetch_assoc()) :
+        echo $row ["id"];
+       
+    ?>
+
+        <div>
+            <div class="card mb-4 p-2" style="width: 15rem;">
+                <div class="text-center fs-3 bg-white"><h3 style="color: #001C30;">GROUPE <?= $row['nom_groupe'] ?></h3></div>
+                <div class="text-center w-100 rounded-2">
+                    <?php for ($i = 0; $i < count($equipes); $i++) :
+                     $myArray = array(); 
+                   
+                    
+                        $pay = explode("-", $equipes[1]);
+                        array_push($myArray,  $pay); 
+                        // trouve liste on recuper donner in Arry 
+
+                        list($nomEquipe, $logo) = explode(' - ', $equipes[$i]);
+                    ?>
+                        <div class="d-flex my-1 py-2 rounded-2 border" style="background-color:#001B79">
+                            <div class=" ms-1">
+                                <img src="<?php echo $logo; ?>" alt="Logo" class="mt-1 ms-1" style="max-width: 40px; max-height: 40px;">
+                            </div>
+                            <div>
+                                <button class="text-white ms-1 fs-5 m-0 btn " data-index="<?= $pay[0] ?>" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><?= $nomEquipe ?></button>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </div>
+        </div>
+
+ 
+    <?php print_r(   $myArray ); endwhile; ?>
+</div>
+
+<!-- Modal -->
+<?php
+if (isset($pay[0])) {
+    $index_value = $pay[0];
+
+    $stmt = $conn->prepare("SELECT e.nom_equipe, e.capitale, e.population, e.joueur from equipe e where e.nom_equipe = ?");
+    $stmt->bind_param("s", $index_value);
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    // Fetch the data
+    $row = $result->fetch_assoc();
+
+    // Check if data is retrieved
+    if ($row) {
+        // Modal HTML with fetched data
+?>
+        <div class="modal fade" id="exampleModal_1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"><?= $row["nom_equipe"]; ?></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>CAPITALE: <?= $row['capitale']; ?></p>
+                        <p>POPULATION: <?= $row['population']; ?></p>
+                        <p>JOUEURS CLES: <?= $row['joueur']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php
+    } else {
+        echo 'No data found for the specified index.';
+    }
+
+    $stmt->close();
+} else {
+    echo 'Index value not provided.';
+}
+?>
