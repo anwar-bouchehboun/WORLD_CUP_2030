@@ -34,19 +34,9 @@ include'./PHP_Sql/cnx.php'
     </section>
 <!-- button filtage  -->
 <section class="w-75 mx-auto">
-<div class=" mt-1">
-         <form  method="GET" class="mb-4  d-flex flex-wrap justify-content-center gap-2">
-          <input type="submit" class="btn btn-primary px-3 " value="ALL GROUP" name="ALL" id="all"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP A" name="A" id="G" />
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP B" name="B" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP C" name="C" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP D" name="D" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP E" name="E" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP F" name="F" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP G" name="G" id="G"/>
-          <input type="submit" class="btn btn-primary btn-group" value="GROUP H" name="H" id="G"/>
-         </form>
-        </div>
+          <?php 
+              include'PHP_Sql/button.php'
+          ?>
         <!-- A -->
         <?php
         include'PHP_Sql/GA.PHP'
@@ -88,42 +78,9 @@ include'./PHP_Sql/cnx.php'
 
 
 <section>
-<?php
-    $result = $conn->query("SELECT g.nom AS nom_groupe, GROUP_CONCAT(CONCAT(e.nom_equipe, ' - ', e.logo)) AS equipes_du_groupe
-    FROM groupes g
-    JOIN equipe e ON g.id = e.id_groupe
-    GROUP BY g.nom");
-?>
-    <div id="groupe" class=" container mt-5 d-flex flex-wrap justify-content-center gap-5">
-
-        <?php
-        while ($row = $result->fetch_assoc()) :
-            $equipes = explode(',', $row['equipes_du_groupe']);
-        ?>
-
-            <div>
-                <div  class="card mb-4 p-2" style="width: 15rem;">
-                    <div class="text-center fs-3 bg-white"><h3 style="color: #001C30;">GROUPE <?= $row['nom_groupe'] ?></h3></div>
-                    <div class="text-center w-100 rounded-2">
-                        <?php for ($i = 0; $i < count($equipes); $i++) :
-                            list($nomEquipe, $logo) = explode(' - ', $equipes[$i]);
-                        ?>
-                            <div class="d-flex my-1 py-2 rounded-2 border" style="background-color:#001B79">
-                                <div>
-                                    <img src="<?php echo $logo; ?>" alt="Logo" class="mr-2" style="max-width: 40px; max-height: 40px;">
-                                </div>
-                                <div>
-                                    <p class="text-white fs-4 m-0"><?= $nomEquipe ?></p>
-                                </div>
-                            </div>
-                        <?php endfor; ?>
-                    </div>
-                </div>
-            </div>
-
-        <?php endwhile; 
-           $conn->close();?>
-    </div>
+                <?php
+                include'PHP_Sql/affiche.php'
+                ?>
 </section>
 
 
