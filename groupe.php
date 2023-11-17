@@ -28,7 +28,7 @@ include'./PHP_Sql/cnx.php'
                 <img  src="worldcup/LOGO/LOGO.png" alt="logo" class="w-50  ">
             </div>
             <div class="fifa text-start" style="width: 30%;">
-                <h1 class="  fs-3 w-100 " style="color: red;">FIFA WORLD CUP <strong style="font-family:Agbalumo !important;">MOROCCO<span class="text-success">2030</span></strong></h1>
+                <h1 class="  fs-3 w-100 " style="color: #fff;">FIFA WORLD CUP <strong style="font-family:Agbalumo !important;">MOROCCO<span class="text-success">2030</span></strong></h1>
             </div>
         </div>
     </section>
