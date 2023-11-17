@@ -14,7 +14,10 @@ function test($cnc) {
     <h1 class="text-center bg-white w-100 fs-3" style = "color: #001C30;">GROUPE '.$row ["nom"].'</h1>
   
     <div class="d-flex justify-content-between flex-column w-100 gap-2 ">';
-    $TEAMS = "SELECT * FROM equipe WHERE id_groupe = $groupId;";
+    $TEAMS = "SELECT equipe.*,stades.nom_stade as stade FROM equipe ,groupes ,stades  
+    where groupes.id=stades.id_stade
+    and equipe.id_groupe=groupes.id
+    and equipe.id_groupe=$groupId;";
     $TEAMSCNC = mysqli_query($cnc,$TEAMS);
   
     while ($roww = mysqli_fetch_assoc($TEAMSCNC)) {
@@ -38,6 +41,7 @@ function test($cnc) {
                     <h2 class="fs-3 ">CONTIENT: <strong> '.$roww['continent'].' </strong></h2>
                     <h2 class="fs-3">POPULATION: <strong> '. $roww['population'].' </strong></h2>
                     <h2 class="fs-3">JOUEURS CLES: <strong> '.$roww['joueur'].'</strong></h2>
+                     <h2 class="fs-3">STADE : <strong> '.$roww['stade'].'</strong></h2>
                     </div>
                 </div>
             </div>
